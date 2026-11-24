@@ -11,7 +11,7 @@ function b64(bytes){return btoa(String.fromCharCode(...new Uint8Array(bytes)));}
 function unb64(str){return Uint8Array.from(atob(str),c=>c.charCodeAt(0));}
 async function deriveKey(password,salt){
   const material=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveKey"]);
-  return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:310000,hash:"SHA-256"},material,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:100000,hash:"SHA-256"},material,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
 }
 async function encryptSecret(value){
   if(!value) return "";
