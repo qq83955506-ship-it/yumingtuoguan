@@ -1,0 +1,8 @@
+name = "free-domain-manager"
+compatibility_date = "2026-11-24"
+pages_build_output_dir = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "free-domain-manager"
+database_id = "在这里填写你的D1数据库ID"
